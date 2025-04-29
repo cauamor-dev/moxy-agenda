@@ -16,7 +16,9 @@ const app = express();
 // Middleware
 app.use(cors());
 app.use(express.json());
-app.use(express.static('public'));
+
+// Servir arquivos estáticos da pasta public
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Log de requisições
 app.use((req, res, next) => {
@@ -25,7 +27,10 @@ app.use((req, res, next) => {
 });
 
 // Conexão com o MongoDB
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/moxy-agenda', {
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/moxy-agenda';
+console.log('Tentando conectar ao MongoDB em:', MONGODB_URI);
+
+mongoose.connect(MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
@@ -239,6 +244,21 @@ app.delete('/api/notes/:id', auth, async (req, res) => {
 // Rota para servir o arquivo HTML principal
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
+// Rota para servir o arquivo de registro
+app.get('/register', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'register.html'));
+});
+
+// Rota para servir a agenda
+app.get('/agenda', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'agenda.html'));
+});
+
+// Tratamento de erros 404 - página não encontrada
+app.use((req, res, next) => {
+    res.status(404).sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 // Tratamento de erros global
