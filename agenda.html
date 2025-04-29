@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moxy - Sua Agenda Pessoal</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="agenda.css">
+</head>
+<body>
+    <div class="container">
+        <div class="welcome-message">
+            <h1>Sua Agenda Pessoal</h1>
+            <p>bem vindo(a) à <span>moxy</span></p>
+        </div>
+        
+        <div class="agenda-container">
+            <div class="notes-box">
+                <h3>Minhas Anotações</h3>
+                <div class="notes-input">
+                    <input type="text" id="noteInput" placeholder="Nova anotação...">
+                    <button id="addNote">+</button>
+                </div>
+                <div class="notes-list" id="notesList">
+                    <!-- Anotações serão inseridas via JavaScript -->
+                </div>
+            </div>
+            
+            <div class="calendar-box">
+                <div class="calendar-header">
+                    <button id="prevMonth">&lt;</button>
+                    <h2 id="currentMonth">Dezembro 2023</h2>
+                    <button id="nextMonth">&gt;</button>
+                </div>
+                
+                <div class="weekdays">
+                    <div>Dom</div>
+                    <div>Seg</div>
+                    <div>Ter</div>
+                    <div>Qua</div>
+                    <div>Qui</div>
+                    <div>Sex</div>
+                    <div>Sáb</div>
+                </div>
+                
+                <div class="calendar" id="calendar">
+                    <!-- Dias serão inseridos via JavaScript -->
+                </div>
+            </div>
+            
+            <div class="tasks-box">
+                <h3>Tarefas do Dia</h3>
+                <div class="task-input">
+                    <input type="text" id="taskInput" placeholder="Adicionar nova tarefa...">
+                    <select id="taskPriority">
+                        <option value="tranquila">Tranquila</option>
+                        <option value="importante">Importante</option>
+                        <option value="muito-importante">Muito Importante</option>
+                    </select>
+                    <button id="addTask">+</button>
+                </div>
+                <div class="tasks-list" id="tasksList">
+                    <!-- Tarefas serão inseridas via JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="agenda.js"></script>
+</body>
+</html> 

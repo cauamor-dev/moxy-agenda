@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moxy - Cadastro</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="welcome-message">
+            <h1>Junte-se a nós</h1>
+            <p>crie sua conta na <span>moxy</span></p>
+        </div>
+        
+        <div class="login-container">
+            <div class="login-box">
+                <h2>Cadastro</h2>
+                <form id="registerForm">
+                    <div class="input-group">
+                        <input type="text" id="name" required>
+                        <label for="name">Nome completo</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="email" id="email" required>
+                        <label for="email">E-mail</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="password" id="password" required>
+                        <label for="password">Senha</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="password" id="confirmPassword" required>
+                        <label for="confirmPassword">Confirmar senha</label>
+                    </div>
+                    <div class="terms">
+                        <input type="checkbox" id="terms" required>
+                        <label for="terms">Eu concordo com os <a href="#">termos de uso</a> e <a href="#">política de privacidade</a></label>
+                    </div>
+                    <button type="submit">Criar conta</button>
+                </form>
+                <p class="register-link">Já tem uma conta? <a href="index.html">Fazer login</a></p>
+            </div>
+        </div>
+    </div>
+    <script src="register.js"></script>
+</body>
+</html> 
